@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>KEAOTIC — Skate Supply Bandung</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --paper: #fffdf6;
+      --yellow: #ffefad;
+      --yellow-soft: #fff7d1;
+      --pink: #ffd9e3;
+      --pink-strong: #eca0b7;
+      --white: #ffffff;
+      --ink: #2f2a2c;
+      --grey: #756970;
+      --line: rgba(47, 42, 44, 0.14);
+      --shadow: 0 24px 60px rgba(246, 166, 189, 0.20);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+    }
+
+    body {
+      font-family: "Space Grotesk", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: var(--pink);
+      color: var(--ink);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--pink-strong);
+      outline-offset: 5px;
+    }
+
+    .wrap {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 253, 246, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 17px 0;
+    }
+
+    .brand {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand i {
+      color: var(--pink-strong);
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .navigation a {
+      color: var(--grey);
+      text-decoration: none;
+      font-size: 0.73rem;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+
+    .navigation a:hover {
+      color: var(--ink);
+    }
+
+    .wa-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      transition: background 0.25s, transform 0.25s;
+    }
+
+    .wa-button:hover {
+      background: #76515d;
+      transform: translateY(-2px);
+    }
+
+    /* HOME */
+
+    .hero {
+      padding: 90px 0 80px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .kicker {
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 9px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--white);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3.8rem, 8vw, 6.6rem);
+      line-height: 0.96;
+      font-weight: 400;
+      letter-spacing: -0.025em;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--pink-strong);
+    }
+
+    .hero-copy {
+      max-width: 520px;
+      margin-top: 26px;
+      color: var(--grey);
+      font-size: 0.98rem;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 27px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 600;
+      transition: transform 0.28s, box-shadow 0.28s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-dark {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .btn-light {
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: var(--white);
+    }
+
+    .hero-photo {
+      position: relative;
+      border-radius: 34px 34px 8px 34px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--pink);
+      animation: floaty 7s ease-in-out infinite;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s ease;
+    }
+
+    .hero-photo:hover img {
+      transform: scale(1.05);
+    }
+
+    .hero-tag {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: rgba(255, 253, 246, 0.94);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    @keyframes floaty {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    /* RUNNING TEXT */
+
+    .marquee {
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background: var(--yellow-soft);
+      padding: 15px 0;
+      white-space: nowrap;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: slide 28s linear infinite;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 1.12rem;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    .marquee-group {
+      display: flex;
+      gap: 36px;
+      padding-right: 36px;
+    }
+
+    .marquee-group span::after {
+      content: "✦";
+      margin-left: 36px;
+      color: var(--pink-strong);
+    }
+
+    @keyframes slide {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* GENERAL SECTION */
+
+    .section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 44px;
+    }
+
+    .section-title h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2.6rem, 5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .section-title p {
+      max-width: 390px;
+      color: var(--grey);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    /* PROFILE */
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .profile-card {
+      padding: 38px;
+      background: var(--pink);
+      border-radius: 30px 30px 30px 6px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card h3 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 3rem;
+      line-height: 1.05;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .profile-card p {
+      color: #654b55;
+      line-height: 1.8;
+    }
+
+    .profile-points {
+      display: grid;
+      gap: 14px;
+    }
+
+    .point {
+      padding: 23px 26px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--white);
+    }
+
+    .point h3 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 7px;
+    }
+
+    .point p {
+      color: var(--grey);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    /* PRODUCT MENU */
+
+    .catalog {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      overflow: hidden;
+      transition: transform 0.35s, box-shadow 0.35s;
+    }
+
+    .product:hover {
+      transform: translateY(-9px);
+      box-shadow: var(--shadow);
+    }
+
+    .product-photo {
+      position: relative;
+      height: 245px;
+      overflow: hidden;
+      background: var(--yellow-soft);
+    }
+
+    .product:nth-child(even) .product-photo {
+      background: var(--pink);
+    }
+
+    .product-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s ease;
+    }
+
+    .product:hover .product-photo img {
+      transform: scale(1.07);
+    }
+
+    .product-label {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(255, 253, 246, 0.95);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .product-body {
+      padding: 24px;
+    }
+
+    .product-body h3 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .product-body p {
+      color: var(--grey);
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      min-height: 60px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .price {
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+
+    .buy {
+      padding: 10px 17px;
+      border-radius: 999px;
+      background: var(--yellow);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      transition: background 0.25s;
+    }
+
+    .buy:hover {
+      background: var(--pink);
+    }
+
+    .catalog-note {
+      margin-top: 24px;
+      color: var(--grey);
+      font-size: 0.8rem;
+      line-height: 1.7;
+    }
+
+    /* LOCATION */
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 35px;
+    }
+
+    .location-card {
+      padding: 34px;
+      background: var(--yellow);
+      border-radius: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .location-card h3 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 2.3rem;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+
+    .location-card p {
+      color: #685a32;
+      line-height: 1.8;
+    }
+
+    .address {
+      font-size: 1.03rem;
+      font-weight: 600;
+      line-height: 1.7;
+      font-style: normal;
+    }
+
+    .map {
+      min-height: 390px;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 390px;
+      border: 0;
+      display: block;
+    }
+
+    /* ABOUT US */
+
+    .about {
+      background:
+        radial-gradient(
+          circle at 8% 15%,
+          var(--yellow) 0,
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 92% 85%,
+          var(--pink) 0,
+          transparent 38%
+        ),
+        var(--paper);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3rem, 5.4vw, 4.4rem);
+      line-height: 1;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+
+    .about h2 em {
+      color: #a65a73;
+    }
+
+    .about p {
+      color: var(--grey);
+      line-height: 1.9;
+      margin-bottom: 17px;
+    }
+
+    .about-card {
+      padding: 34px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      transform: rotate(2deg);
+    }
+
+    .about-card h3 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .about-card ul {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+    }
+
+    .about-card li {
+      padding-left: 25px;
+      position: relative;
+      color: var(--grey);
+      line-height: 1.7;
+      font-size: 0.93rem;
+    }
+
+    .about-card li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: #a65a73;
+    }
+
+    /* ORDER FORM */
+
+    .order-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .order-info h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(3rem, 5vw, 4rem);
+      line-height: 1.05;
+      font-weight: 400;
+      margin-bottom: 22px;
+    }
+
+    .order-info p {
+      color: var(--grey);
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .contact-box {
+      padding: 26px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+    }
+
+    .contact-box small {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    .contact-box .phone {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 20px;
+      text-decoration: none;
+    }
+
+    .form {
+      padding: 34px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    form {
+      display: grid;
+      gap: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 9px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--white);
+      font-size: 0.94rem;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.22s, box-shadow 0.22s;
+    }
+
+    textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--pink-strong);
+      box-shadow: 0 0 0 4px rgba(255, 217, 227, 0.55);
+    }
+
+    .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .submit-button {
+      padding: 17px;
+      border: none;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.25s;
+    }
+
+    .submit-button:hover {
+      background: #76515d;
+      transform: translateY(-3px);
+    }
+
+    .form-note {
+      color: var(--grey);
+      font-size: 0.75rem;
+      line-height: 1.7;
+    }
+
+    /* SOURCE */
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .source-item {
+      padding: 26px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+    }
+
+    .source-item h3 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .source-item p,
+    .source-item li {
+      color: var(--grey);
+      font-size: 0.86rem;
+      line-height: 1.8;
+    }
+
+    .source-item ul {
+      list-style: none;
+    }
+
+    .source-item a {
+      text-underline-offset: 4px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 36px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: var(--grey);
+      font-size: 0.8rem;
+      line-height: 1.7;
+    }
+
+    .footer-brand {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 1.6rem;
+      color: var(--ink);
+    }
+
+    /* SCROLL EFFECT */
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .js .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* TABLET */
+
+    @media (max-width: 1050px) {
+      .nav {
+        flex-wrap: wrap;
+      }
+
+      .nav nav {
+        order: 3;
+        width: 100%;
+      }
+
+      .navigation {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px 22px;
+        padding: 5px 0;
+      }
+
+      html {
+        scroll-padding-top: 150px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .profile-grid,
+      .location-grid,
+      .about-grid,
+      .order-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .catalog {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .source-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .section-title {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-photo img {
+        height: 420px;
+      }
+
+      .about-card {
+        transform: none;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 580px) {
+      .hero {
+        padding: 55px 0 65px;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .catalog,
+      .source-grid,
+      .two {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation {
+        gap: 13px 17px;
+      }
+
+      .navigation a {
+        font-size: 0.66rem;
+      }
+
+      .hero-photo img {
+        height: 340px;
+      }
+
+      .product-photo {
+        height: 265px;
+      }
+
+      .profile-card,
+      .location-card,
+      .about-card,
+      .form {
+        padding: 26px;
+      }
+
+      .wa-button {
+        padding: 11px 16px;
+        font-size: 0.7rem;
+      }
+
+      .hero-tag {
+        left: 14px;
+        bottom: 14px;
+        font-size: 0.63rem;
+      }
+
+      .price {
+        font-size: 1rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .js .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header class="topbar">
+    <div class="wrap nav">
+
+      <a href="#home" class="brand" aria-label="KEAOTIC Home">
+        KEA<i>OTIC</i>
+      </a>
+
+      <nav aria-label="Navigasi utama">
+        <ul class="navigation">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#source">Source</a></li>
+        </ul>
+      </nav>
+
+      <a
+        class="wa-button"
+        href="https://wa.me/628456271899"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Chat WhatsApp
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HOME -->
+
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+
+        <div class="reveal">
+          <span class="kicker">Independent skate supply · Bandung</span>
+
+          <h1>
+            Everything<br>
+            for your <em>ride.</em>
+          </h1>
+
+          <p class="hero-copy">
+            Papan baru, roda baru, atau outfit buat sesi skate berikutnya?
+            Welcome to KEAOTIC. Tempat perlengkapan skate ketemu gaya
+            yang nggak harus ikut-ikutan.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="#menu">Explore the collection</a>
+            <a class="btn btn-light" href="#pesan">Pesan sekarang</a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <img
+            src="https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?auto=format&fit=crop&w=1200&q=85"
+            alt="Foto suasana skateboard untuk headline KEAOTIC"
+            fetchpriority="high"
+          >
+
+          <div class="hero-tag">
+            A little chaos. A lot of skate.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RUNNING TEXT -->
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+
+        <div class="marquee-group">
+          <span>Decks</span>
+          <span>Wheels</span>
+          <span>Trucks</span>
+          <span>Protectors</span>
+          <span>Tools</span>
+          <span>Apparel</span>
+        </div>
+
+        <div class="marquee-group">
+          <span>Decks</span>
+          <span>Wheels</span>
+          <span>Trucks</span>
+          <span>Protectors</span>
+          <span>Tools</span>
+          <span>Apparel</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROFILE -->
+
+    <section class="section" id="profile">
+      <div class="wrap">
+
+        <div class="section-title reveal">
+          <h2>Profile KEAOTIC</h2>
+
+          <p>
+            Buat yang baru belajar berdiri di papan sampai yang
+            nggak bisa pulang sebelum landing satu trik.
+          </p>
+        </div>
+
+        <div class="profile-grid">
+
+          <div class="profile-card reveal">
+            <h3>Skate hard.<br>Stay yourself.</h3>
+
+            <p>
+              KEAOTIC adalah konsep toko skate di Bandung dengan
+              pilihan perlengkapan, sparepart, dan apparel.
+              Kami suka barang yang fungsional, tampilan yang
+              punya karakter, dan proses memilih yang nggak bikin pusing.
+            </p>
+          </div>
+
+          <div class="profile-points">
+
+            <article class="point reveal">
+              <h3>First board? Welcome.</h3>
+              <p>
+                Baru mulai bukan masalah. Pilih kategori yang kamu
+                cari, lalu tanyakan detailnya lewat WhatsApp.
+              </p>
+            </article>
+
+            <article class="point reveal">
+              <h3>One stop, more skate.</h3>
+              <p>
+                Dari papan dan roda sampai celana dan topi.
+                Perlengkapan skate dan outfit ada di satu tempat.
+              </p>
+            </article>
+
+            <article class="point reveal">
+              <h3>No pressure shopping.</h3>
+              <p>
+                Belum yakin ukuran atau pilihannya? Tanya dulu,
+                cocokkan kebutuhan, baru tentukan barangnya.
+              </p>
+            </article>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+
+    <section class="section" id="menu">
+      <div class="wrap">
+
+        <div class="section-title reveal">
+          <h2>The skate menu.</h2>
+
+          <p>
+            Pilih kategori, lihat harga contoh, lalu klik Pesan.
+            Detail ukuran, stok, dan ongkir dikonfirmasi lewat WhatsApp.
+          </p>
+        </div>
+
+        <div class="catalog">
+
+          <!-- DECK -->
+
+          <article class="product">
+            <div class="product-photo">
+              <img
+                src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6e14e27b439d1be8d973b124bd6645926a5ca002becc9bd72946d0e516a7e36d75d617e47f8052945eb2e729dadabc9db6c56a752f776a7bf8a6a37c6ddf67c45e"
+                alt="Contoh ilustrasi deck skateboard bermotif pastel"
+                loading="lazy"
+              >
+              <span class="product-label">Deck collection</span>
+            </div>
+
+            <div class="product-body">
+              <h3>Skateboard / Deck</h3>
+              <p>
+                Mulai dari papan. Pilihan deck untuk melengkapi
+                setup dan karakter skate kamu.
+              </p>
+
+              <div class="price-row">
+                <span class="price">Rp 750.000</span>
+                <a class="buy" href="#pesan" data-product="deck">Pesan</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROTECTORS -->
+
+          <article class="product">
+            <div class="product-photo">
+              <img
+                src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/33fbe17b-c593-5816-9cba-f641a6a7c956/19fff8e5-c8d2-5bcc-b34c-43e2ef28b80a.jpg"
+                alt="Contoh paket skateboard dan perlengkapan pelindung"
+                loading="lazy"
+              >
+              <span class="product-label">Protection</span>
+            </div>
+
+            <div class="product-body">
+              <h3>Protectors</h3>
+              <p>
+                Pilihan perlengkapan pelindung untuk menemani
+                proses belajar dan latihan.
+              </p>
+
+              <div class="price-row">
+                <span class="price">Rp 320.000</span>
+                <a class="buy" href="#pesan" data-product="protectors">Pesan</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- TOOLS -->
+
+          <article class="product">
+            <div class="product-photo">
+              <img
+                src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6ee96ce3fde8ebdd117f2294474ddadfb22c8f7831ec061390d60734168a0d1387325c1b9d96f564a84b0773b7e2ca2ebccb6f511fc8e923acf8fd8495b4c96ece"
+                alt="Contoh skateboard beserta T-tool dan komponennya"
+                loading="lazy"
+              >
+              <span class="product-label">Fix your setup</span>
+            </div>
+
+            <div class="product-body">
+              <h3>Skate Tools</h3>
+              <p>
+                Peralatan kecil untuk urusan setup:
+                bongkar, pasang, dan sesuaikan skateboard.
+              </p>
+
+              <div class="price-row">
+                <span class="price">Rp 85.000</span>
+                <a class="buy" href="#pesan" data-product="tools">Pesan</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- WHEELS -->
+
+          <article class="product">
+            <div class="product-photo">
+              <img
+                src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6ee55e775220fcb2b00814ea430a96a2ebf4108cd376120a99b18c17741f55791c45d1b16d1329a57787c8513c71cbe871607c874523407f7c2c45e392bc97b3f5"
+                alt="Contoh skateboard lengkap dengan roda dan tools"
+                loading="lazy"
+              >
+              <span class="product-label">Keep rolling</span>
+            </div>
+
+            <div class="product-body">
+              <h3>Roda Skate</h3>
+              <p>
+                Cari roda untuk setup berikutnya.
+                Tanyakan ukuran dan pilihan yang tersedia.
+              </p>
+
+              <div class="price-row">
+                <span class="price">Rp 250.000</span>
+                <a class="buy" href="#pesan" data-product="wheels">Pesan</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- TRUCKS -->
+
+          <article class="product">
+            <div class="product-photo">
+              <img
+                src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6ee55e775220fcb2b00814ea430a96a2ebf4108cd376120a99b18c17741f55791c45d1b16d1329a57787c8513c71cbe871607c874523407f7c2c45e392bc97b3f5"
+                alt="Contoh setup skateboard dan komponen pendukung"
+                loading="lazy"
+              >
+              <span class="product-label">Setup essentials</span>
+            </div>
+
+            <div class="product-body">
+              <h3>Trucks &amp; Bearing</h3>
+              <p>
+                Komponen untuk melengkapi papanmu.
+                Konfirmasi detail dan isi paket sebelum membeli.
+              </p>
+
+              <div class="price-row">
+                <span class="price">Rp 350.000</span>
+                <a class="buy" href="#pesan" data-product="trucks">Pesan</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- T-SHIRT -->
+
+          <article class="product">
+            <div class="product-photo">
+              <img
+                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80"
+                alt="Foto ilustrasi kaos putih untuk kategori baju skate"
+                loading="lazy"
+              >
+              <span class="product-label">Daily uniform</span>
+            </div>
+
+            <div class="product-body">
+              <h3>Baju Skate</h3>
+              <p>
+                Kaos simpel untuk dipadukan dengan outfit skate.
+                Pilih ukuran lewat catatan pesanan.
+              </p>
+
+              <div class="price-row">
+                <span class="price">Rp 175.000</span>
+                <a class="buy" href="#pesan" data-product="shirt">Pesan</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PANTS -->
+
+          <article class="product">
+            <div class="product-photo">
+              <img
+                src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&q=80"
+                alt="Foto ilustrasi jeans untuk kategori celana skate"
+                loading="lazy"
+              >
+              <span class="product-label">Room to move</span>
+            </div>
+
+            <div class="product-body">
+              <h3>Celana Skate</h3>
+              <p>
+                Lengkapi outfit dengan pilihan celana.
+                Tanyakan ukuran dan model lewat WhatsApp.
+              </p>
+
+              <div class="price-row">
+                <span class="price">Rp 280.000</span>
+                <a class="buy" href="#pesan" data-product="pants">Pesan</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SHOES -->
+
+          <article class="product">
+            <div class="product-photo">
+              <img
+                src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=800&q=80"
+                alt="Foto ilustrasi sneakers untuk kategori sepatu skate"
+                loading="lazy"
+              >
+              <span class="product-label">Footwear</span>
+            </div>
+
+            <div class="product-body">
+              <h3>Sepatu Skate</h3>
+              <p>
+                Satu langkah menuju outfit lengkap.
+                Konfirmasi model dan nomor sepatu sebelum pesan.
+              </p>
+
+              <div class="price-row">
+                <span class="price">Rp 650.000</span>
+                <a class="buy" href="#pesan" data-product="shoes">Pesan</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- CAPS -->
+
+          <article class="product">
+            <div class="product-photo">
+              <img
+                src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6e1d9ea9e78c038935921d63106b4879c728ed094d8c4e94e69ed8f630852d405890c4f1deac109c1b36eaa5543bc255f0c1db7b2eca68baed6e74d482ff3fe5d8"
+                alt="Contoh topi denim bertema skate"
+                loading="lazy"
+              >
+              <span class="product-label">Finishing touch</span>
+            </div>
+
+            <div class="product-body">
+              <h3>Topi Skate</h3>
+              <p>
+                Sentuhan terakhir buat daily look.
+                Simpel dipadukan, tetap punya karakter.
+              </p>
+
+              <div class="price-row">
+                <span class="price">Rp 120.000</span>
+                <a class="buy" href="#pesan" data-product="cap">Pesan</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="catalog-note">
+          Website ini merupakan konsep toko untuk tugas.
+          Semua harga adalah contoh. Foto merupakan ilustrasi kategori,
+          bukan bukti stok atau spesifikasi produk yang dijual.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+
+    <section class="section" id="location">
+      <div class="wrap">
+
+        <div class="section-title reveal">
+          <h2>Find our little corner.</h2>
+
+          <p>
+            Alamat toko pada konsep KEAOTIC:
+            Jalan Cikutra Barat No. 190, Bandung.
+          </p>
+        </div>
+
+        <div class="location-grid">
+
+          <div class="location-card reveal">
+            <div>
+              <h3>KEAOTIC Store</h3>
+
+              <p>
+                Papan, outfit, dan obrolan soal setup berikutnya.
+                Simpan alamatnya, lalu hubungi nomor toko
+                untuk informasi lebih lanjut.
+              </p>
+            </div>
+
+            <div>
+              <address class="address">
+                Jalan Cikutra Barat No. 190<br>
+                Bandung, Jawa Barat
+              </address>
+
+              <a
+                class="wa-button"
+                style="margin-top: 22px;"
+                href="https://www.google.com/maps/search/?api=1&amp;query=Jalan+Cikutra+Barat+No.+190+Bandung"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Buka Google Maps
+              </a>
+            </div>
+          </div>
+
+          <div class="map">
+            <iframe
+              src="https://maps.google.com/maps?q=Jalan%20Cikutra%20Barat%20No.%20190%20Bandung&amp;z=16&amp;output=embed"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Pencarian alamat Jalan Cikutra Barat No. 190 Bandung"
+            ></iframe>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT US -->
+
+    <section class="section about" id="about">
+      <div class="wrap about-grid">
+
+        <div class="reveal">
+          <h2>Less posing.<br><em>More rolling.</em></h2>
+
+          <p>
+            Ada yang suka suara roda di aspal. Ada yang bahagia
+            cuma karena akhirnya berhasil satu trik.
+            Ada juga yang awalnya “cuma lihat-lihat”, lalu
+            pulang sudah kepikiran setup baru. Kami paham.
+          </p>
+
+          <p>
+            KEAOTIC dibuat buat semua versi itu.
+            Namanya boleh sedikit chaotic, tapi pilihan barangnya
+            nggak perlu bikin kamu bingung:
+            papan, sparepart, pelindung, sampai outfit.
+          </p>
+
+          <p>
+            Kamu nggak harus jago dulu buat mulai.
+            Bawa rasa penasaranmu, cari yang kamu butuhkan,
+            dan nikmati prosesnya. Your style, your pace, your ride.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>The KEAOTIC mindset.</h3>
+
+          <ul>
+            <li>Baru mulai? Tetap bagian dari ceritanya.</li>
+            <li>Outfit boleh rapi, sesi latihan boleh berantakan.</li>
+            <li>Tanya dulu sebelum pilih. Nggak perlu sok tahu.</li>
+            <li>Pilih setup karena cocok, bukan cuma karena ramai.</li>
+            <li>Progress kecil tetap layak dirayakan.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ORDER FORM -->
+
+    <section class="section" id="pesan">
+      <div class="wrap order-grid">
+
+        <div class="order-info reveal">
+          <h2>
+            Pesan lewat<br>
+            form atau<br>
+            <em>WhatsApp.</em>
+          </h2>
+
+          <p>
+            Sudah ketemu pilihanmu? Isi form di samping.
+            Tombolnya akan membuka WhatsApp dengan rincian
+            pesanan yang sudah kamu isi.
+          </p>
+
+          <div class="contact-box">
+            <small>Contact KEAOTIC</small>
+
+            <a class="phone" href="tel:08456271899">
+              0845-6271-899
+            </a>
+
+            <a
+              class="wa-button"
+              href="https://wa.me/628456271899"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chat WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="form">
+          <form id="orderForm">
+
+            <div>
+              <label for="nama">Nama</label>
+
+              <input
+                type="text"
+                id="nama"
+                name="nama"
+                placeholder="Nama lengkap"
+                autocomplete="name"
+                maxlength="100"
+                required
+              >
+            </div>
+
+            <div class="two">
+
+              <div>
+                <label for="barang">Barang</label>
+
+                <select id="barang" name="barang" required>
+                  <option value="" disabled selected>
+                    Pilih barang
+                  </option>
+
+                  <option value="deck">
+                    Skateboard / Deck — Rp 750.000
+                  </option>
+
+                  <option value="protectors">
+                    Protectors — Rp 320.000
+                  </option>
+
+                  <option value="tools">
+                    Skate Tools — Rp 85.000
+                  </option>
+
+                  <option value="wheels">
+                    Roda Skate — Rp 250.000
+                  </option>
+
+                  <option value="trucks">
+                    Trucks &amp; Bearing — Rp 350.000
+                  </option>
+
+                  <option value="shirt">
+                    Baju Skate — Rp 175.000
+                  </option>
+
+                  <option value="pants">
+                    Celana Skate — Rp 280.000
+                  </option>
+
+                  <option value="shoes">
+                    Sepatu Skate — Rp 650.000
+                  </option>
+
+                  <option value="cap">
+                    Topi Skate — Rp 120.000
+                  </option>
+                </select>
+              </div>
+
+              <div>
+                <label for="jumlah">Jumlah</label>
+
+                <input
+                  type="number"
+                  id="jumlah"
+                  name="jumlah"
+                  min="1"
+                  max="99"
+                  step="1"
+                  value="1"
+                  required
+                >
+              </div>
+
+            </div>
+
+            <div>
+              <label for="alamat">Alamat</label>
+
+              <textarea
+                id="alamat"
+                name="alamat"
+                placeholder="Jalan, nomor rumah, kecamatan, kota, dan kode pos"
+                autocomplete="street-address"
+                maxlength="1000"
+                required
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="catatan">Catatan — opsional</label>
+
+              <textarea
+                id="catatan"
+                name="catatan"
+                placeholder="Ukuran, warna, atau detail barang yang diinginkan"
+                maxlength="500"
+              ></textarea>
+            </div>
+
+            <button class="submit-button" type="submit">
+              Lanjut ke WhatsApp
+            </button>
+
+            <p class="form-note">
+              Form ini tidak menyimpan pesanan ke database.
+              Pesan belum terkirim sampai kamu menekan Kirim
+              di WhatsApp. Konfirmasi stok, ukuran, harga,
+              dan ongkir terlebih dahulu.
+            </p>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SOURCE -->
+
+    <section class="section" id="source">
+      <div class="wrap">
+
+        <div class="section-title reveal">
+          <h2>Behind the page.</h2>
+
+          <p>
+            Source dan kredit untuk elemen yang digunakan
+            dalam konsep website KEAOTIC.
+          </p>
+        </div>
+
+        <div class="source-grid">
+
+          <article class="source-item">
+            <h3>Website</h3>
+            <p>
+              Struktur: HTML.<br>
+              Tampilan dan animasi: CSS.<br>
+              Interaksi form dan pilihan produk: JavaScript.
+            </p>
+          </article>
+
+          <article class="source-item">
+            <h3>Typography</h3>
+            <p>
+              Instrument Serif dan Space Grotesk dari
+              <a
+                href="https://fonts.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Google Fonts</a>.
+            </p>
+          </article>
+
+          <article class="source-item">
+            <h3>Home &amp; apparel photos</h3>
+            <p>
+              Foto ilustrasi Home, baju, celana, dan sepatu:
+              <a
+                href="https://unsplash.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Unsplash</a>.
+              Foto adalah ilustrasi kategori, bukan katalog
+              produk resmi KEAOTIC.
+            </p>
+          </article>
+
+          <article class="source-item">
+            <h3>Deck photo</h3>
+            <p>
+              Foto ilustrasi papan:
+              <a
+                href="https://pastelskate.com/product-category/decks-and-parts/decks/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Pastel Skate</a>.
+              Merek pada foto milik pemiliknya masing-masing.
+            </p>
+          </article>
+
+          <article class="source-item">
+            <h3>Gear &amp; cap photos</h3>
+
+            <ul>
+              <li>
+                Ilustrasi tools dan setup:
+                <a
+                  href="https://www.walmart.com/ip/Skateboard-Cruiser-Complete-27-inch-Skateboards-with-LED-Light-Up-Wheels-with-All-in-one-T-Tool-for-Beginners/729524088"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Walmart listing</a>.
+              </li>
+
+              <li>
+                Ilustrasi pelindung:
+                <a
+                  href="https://www.amazon.com/Kids-Skateboard-Beginners-Protective-Skate/dp/B0DCNFPWQZ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Amazon listing</a>.
+              </li>
+
+              <li>
+                Foto topi:
+                <a
+                  href="https://www.skateboarding.com/products/skate-and-create-vintage-dad-cap"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Skateboarding.com</a>.
+              </li>
+            </ul>
+          </article>
+
+          <article class="source-item">
+            <h3>Project note</h3>
+            <p>
+              Website konsep untuk tugas, bukan toko aktif.
+              Harga dan informasi toko adalah contoh.
+              Kredit tidak menggantikan izin penggunaan foto.
+              Gunakan foto sendiri atau foto berizin sebelum
+              menjadikan website sebagai toko sungguhan.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="wrap footer-inner">
+
+      <div class="footer-brand">KEAOTIC</div>
+
+      <div>
+        A little chaos. A lot of skate.<br>
+        Konsep website toko skate.
+      </div>
+
+      <div>
+        Jalan Cikutra Barat No. 190, Bandung<br>
+        WhatsApp: 0845-6271-899
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+    // Animasi muncul saat scroll.
+    if ("IntersectionObserver" in window) {
+      document.documentElement.classList.add("js");
+
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1
+        }
+      );
+
+      document.querySelectorAll(".reveal").forEach(function (item) {
+        observer.observe(item);
+      });
+    }
+
+    // Klik Pesan pada kartu langsung memilih barang di form.
+    const barangInput = document.getElementById("barang");
+
+    document.querySelectorAll("[data-product]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        barangInput.value = button.dataset.product;
+      });
+    });
+
+    // Form membuka WhatsApp tanpa mengklaim pesanan sudah tersimpan.
+    const orderForm = document.getElementById("orderForm");
+
+    orderForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const namaInput = document.getElementById("nama");
+      const alamatInput = document.getElementById("alamat");
+
+      namaInput.setCustomValidity(
+        namaInput.value.trim() ? "" : "Isi nama terlebih dahulu."
+      );
+
+      alamatInput.setCustomValidity(
+        alamatInput.value.trim() ? "" : "Isi alamat terlebih dahulu."
+      );
+
+      if (!orderForm.reportValidity()) {
+        return;
+      }
+
+      const nama = namaInput.value.trim();
+      const alamat = alamatInput.value.trim();
+      const jumlah = document.getElementById("jumlah").value;
+      const catatan = document.getElementById("catatan").value.trim();
+
+      const barang =
+        barangInput.options[barangInput.selectedIndex].textContent.trim();
+
+      const pesan = [
+        "Halo KEAOTIC! Aku ingin menanyakan pesanan berikut:",
+        "",
+        "Nama: " + nama,
+        "Barang: " + barang,
+        "Jumlah: " + jumlah,
+        "Alamat: " + alamat,
+        "Catatan: " + (catatan || "-"),
+        "",
+        "Tolong konfirmasi stok, detail barang, total harga, dan ongkir ya."
+      ].join("\n");
+
+      const nomorWhatsApp = "628456271899";
+      const link =
+        "https://wa.me/" +
+        nomorWhatsApp +
+        "?text=" +
+        encodeURIComponent(pesan);
+
+      window.location.href = link;
+    });
+
+    // Menghapus pesan validasi setelah pengguna mengetik ulang.
+    document.getElementById("nama").addEventListener("input", function () {
+      this.setCustomValidity("");
+    });
+
+    document.getElementById("alamat").addEventListener("input", function () {
+      this.setCustomValidity("");
+    });
+  </script>
+
+</body>
+</html>
